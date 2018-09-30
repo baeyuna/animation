@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>애니메이션</title>
+	<style>
+		#back1{width:1200px; height: 675px; position: absolute; margin:auto; z-index: -9999; left:calc(50% - 600px);}
+		#box1{width:170px;position: absolute; left:420px;top:400px;}
+		#box2{width:170px;position: absolute; left:670px;top:400px;}
+		#box3{width:170px;position: absolute; left:920px;top:400px;}
+		#kan{width:500px;position: absolute; left:505px; top:280px;}
+		#puppy{width:500px;position: absolute; left:505px; top:280px;}
+		#cat{width:500px;position: absolute; left:505px; top:280px;}
+
+		#left{width:600px; height: 675px; position: absolute; margin:auto; z-index: -9999; left:calc(50% - 600px); animation: leftOpen 2s ease 1 forwards;animation-play-state: paused; }
+		#right{width:600px; height: 675px; position: absolute; margin:auto; z-index: -9999; right:calc(50% - 600px); animation: rightOpen 2s ease 1 forwards; animation-play-state: paused; }
+		#startbut
+			{width: 150px; height: 150px; position: absolute; left:690px; top:230px; background: yellow; border-radius: 50%; color: black; font-size: 20px; font-weight: bold; text-align: center;line-height: 150px; font-family:helvatica; text-transform: uppercase; transition: all 1s; animation: a 3s infinite;}
+
+		@keyframes a{
+            from{margin-top:0px;}
+            to{margin-top:0pX;
+            transform: rotate3D(30,30,30,360deg);
+            }
+
+        }
+			@keyframes leftOpen
+		{
+			0% {width: 600px;}
+			100%{width: 0px;}
+		}
+		@keyframes rightOpen			
+		{
+			0% {width:600px;}
+			100%{width:0px;}
+		}
+
+
+	</style>
+</head>
+<body>	
+		<audio id="music">
+		<source src="rocky.mp3" type="audio/mpeg">
+		</audio>
+
+		<img src="./img/back1.jpg" id="back1">
+		<img src="./img/box.png" id="box1">
+		<img src="./img/box.png" id="box2">
+		<img src="./img/box.png" id="box3">
+		<img src="./img/cat.gif" id="cat">
+		<img src="./img/kan.gif" id="kan">
+		<img src="./img/puppy.gif" id="puppy">
+		<img src="./img/left.jpg" id="left">
+		<img src="./img/right.jpg" id="right">
+
+		<div id="startbut">땡땡땡땡땡</div>
+
+
+		<script type="text/javascript">
+
+		document.getElementById("box1").style.visibility = "hidden";
+		document.getElementById("box2").style.visibility = "hidden";
+		document.getElementById("box3").style.visibility = "hidden";
+
+		startbut.onclick = function () {
+			startbut.style.opacity = 0;
+			left.style.animationPlayState ="running";
+			right.style.animationPlayState ="running";
+			document.getElementById("box1").style.visibility = "visible";
+			document.getElementById("box2").style.visibility = "visible";
+			document.getElementById("box3").style.visibility = "visible";
+			music.currentTime = 7;
+			music.play();
+			}
+		
+
+
+
+		document.getElementById("kan").style.visibility = "hidden";
+		document.getElementById("puppy").style.visibility = "hidden";
+		document.getElementById("cat").style.visibility = "hidden";
+
+			
+			var toggle1 = "off";
+	box1.onclick =function() {
+		if(toggle1 == "off"){
+		toggle1	 = "on";
+		document.getElementById("puppy").style.visibility = "visible";
+		}else{
+			box1.setAttribute("src","./img/box.png")
+			toggle1 = "off"
+			document.getElementById("puppy").style.visibility = "hidden";
+		}
+	}
+
+			var toggle2 = "off";
+	box2.onclick =function() {
+		if(toggle2 == "off"){
+		toggle2	 = "on";
+		document.getElementById("cat").style.visibility = "visible";
+		}else{
+			box2.setAttribute("src","./img/box.png")
+			toggle2 = "off"
+			document.getElementById("cat").style.visibility = "hidden";
+		}
+	}
+
+			var toggle3 = "off";
+	box3.onclick =function() {
+		if(toggle3 == "off"){	
+		toggle3	 = "on";
+		document.getElementById("kan").style.visibility = "visible";
+		}else{
+			box3.setAttribute("src","./img/box.png")
+			toggle3 = "off"
+			document.getElementById("kan").style.visibility = "hidden";
+		}
+		}
+		</script>
+</body>
+</html>
